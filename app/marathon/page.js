@@ -771,47 +771,40 @@ export default function MarathonPage() {
             >
               Our Sponsors
             </motion.h2>
-            <div className="max-w-6xl mx-auto">
-              <Tabs defaultValue="cosponsors">
-                <TabsList className="w-full mx-auto my-8">
-                  <TabsTrigger value="cosponsors" className="bg-transparent">
-                    Co-sponsors
-                  </TabsTrigger>
-                  <TabsTrigger value="media">Media-sponsors</TabsTrigger>
-                  <TabsTrigger value="social">Social-sponsors</TabsTrigger>
-                </TabsList>
-                <TabsContent
-                  value="cosponsors"
-                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 place-items-center"
-                >
-                  {Array.from({ length: 6 }, (_, index) => (
-                    <SponsorCard key={`cosponsors-${index}`} />
-                  ))}
-                </TabsContent>
+            <div className="max-w-6xl mx-auto flex flex-col items-center">
+              <motion.h3 className="text-md font-bold my-5">
+                Co-Sponsers
+              </motion.h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                {Array.from({ length: 4 }, (_, index) => (
+                  <SponsorCard key={`cosponsors-${index}`} />
+                ))}
+              </div>
 
-                <TabsContent
-                  value="media"
-                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 place-items-center"
-                >
-                  {Array.from({ length: 6 }, (_, index) => (
-                    <SponsorCard key={`media-${index}`} />
-                  ))}
-                </TabsContent>
-                <TabsContent
-                  value="social"
-                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 place-items-center"
-                >
-                  {Array.from({ length: 6 }, (_, index) => (
-                    <SponsorCard key={`social-${index}`} />
-                  ))}
-                </TabsContent>
-              </Tabs>
+              <motion.h3 className="text-md font-bold my-5">
+                Media-Sponsers
+              </motion.h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                {Array.from({ length: 4 }, (_, index) => (
+                  <SponsorCard key={`media-${index}`} />
+                ))}
+              </div>
+              <motion.h3 className="text-md font-bold my-5">
+                Social-Sponsers
+              </motion.h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                {Array.from({ length: 4 }, (_, index) => (
+                  <SponsorCard key={`social-${index}`} />
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>
       </motion.section>
 
-      <SponsorsSlider />
+      <div className="my-4">
+        <SponsorsSlider />
+      </div>
 
       {/* Footer */}
       <motion.footer
